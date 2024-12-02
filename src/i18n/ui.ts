@@ -7,7 +7,7 @@ export const defaultLang = 'en';
 
 export const ui = {
   en: {
-    'nav.name': 'Computer Science and Engineering',
+    'nav.name': 'Division of Computer Engineering',
     'nav.union': 'Chalmers Student Union',
     'nav.school': 'School',
     'nav.dns': 'Committee of Studies',
