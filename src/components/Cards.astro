@@ -1,0 +1,19 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Welcome from './cards/Welcome.astro';
+import Facebook from './cards/Facebook.astro';
+import Events from './cards/Events.astro';
+import Food from './cards/Food.astro';
+import Partner from './cards/Partner.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<div class="grid grid-flow-row grid-cols-3 gap-3">
+  <Welcome/>
+  <Facebook/>
+  <Events/>
+  <Food/>
+  <Partner/>
+</div>
