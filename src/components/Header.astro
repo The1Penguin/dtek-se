@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { languages } from '../i18n/ui';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import logo from '../images/logo.svg'
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -10,7 +12,7 @@ const t = useTranslations(lang);
   <div class="drawer-content flex flex-col">
     <div class="navbar bg-base-300 w-full">
       <div class="mx-2 flex-1 px-2">
-        <img class="mx-2" src="/logo.svg" alt="Dtek Logo" />
+        <Image class="mx-2" src={logo} loading="eagerly" alt="Dtek Logo" />
         <div class="text-large flex flex-col">
           <span>{t('nav.name')}</span>
           <span>{t('nav.union')}</span>
@@ -22,22 +24,22 @@ const t = useTranslations(lang);
             <details>
               <summary>{t('nav.school')}</summary>
               <ul class="bg-base-100 rounded-t-none p-2">
-                <li><a href="https://dns.dtek.se/">{t('nav.dns')}</a></li>
-                <li><a href="https://cloud.timeedit.net/chalmers/web/public/">{t('nav.schedule')}</a></li>
-                <li><a href="https://cloud.timeedit.net/chalmers/web/b1/">{t('nav.rooms')}</a></li>
-                <li><a href="https://kortladdning3.chalmerskonferens.se/">{t('nav.card')}</a></li>
-                <li><a href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">{t('nav.map')}</a></li>
-                <li><a href="https://dtek.se/studiesocial-hjalp">{t('nav.study')}</a></li>
+                <li><a aria-label={t('nav.dns')} href="https://dns.dtek.se/">{t('nav.dns')}</a></li>
+                <li><a aria-label={t('nav.schedule')} href="https://cloud.timeedit.net/chalmers/web/public/">{t('nav.schedule')}</a></li>
+                <li><a aria-label={t('nav.rooms')} href="https://cloud.timeedit.net/chalmers/web/b1/">{t('nav.rooms')}</a></li>
+                <li><a aria-label={t('nav.card')} href="https://kortladdning3.chalmerskonferens.se/">{t('nav.card')}</a></li>
+                <li><a aria-label={t('nav.map')} href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">{t('nav.map')}</a></li>
+                <li><a aria-label={t('nav.study')} href="https://dtek.se/studiesocial-hjalp">{t('nav.study')}</a></li>
               </ul>
             </details>
           </li>
-          <li><a href="https://datateknologer.se/">{t('nav.companies')}</a></li>
-          <li><a href="https://dfoto.se/">{t('nav.photo')}</a></li>
-          <li><a href="https://dnollk.se/">{t('nav.reception')}</a></li>
-          <li><a href="https://wiki.dtek.se/">{t('nav.wiki')}</a></li>
-          <li><a href="https://dbus.dtek.se/">{t('nav.dbus')}</a></li>
-          <li><a href={`/${lang}/documents/`}>{t('nav.documents')}</a></li>
-          <li><a href={`/${lang}/newsletter/`}>{t('nav.newsletter')}</a></li>
+          <li><a aria-label={t('nav.companies')} href="https://datateknologer.se/">{t('nav.companies')}</a></li>
+          <li><a aria-label={t('nav.photo')} href="https://dfoto.se/">{t('nav.photo')}</a></li>
+          <li><a aria-label={t('nav.reception')} href="https://dnollk.se/">{t('nav.reception')}</a></li>
+          <li><a aria-label={t('nav.wiki')} href="https://wiki.dtek.se/">{t('nav.wiki')}</a></li>
+          <li><a aria-label={t('nav.dbus')} href="https://dbus.dtek.se/">{t('nav.dbus')}</a></li>
+          <li><a aria-label={t('nav.documents')} href={`/${lang}/documents/`}>{t('nav.documents')}</a></li>
+          <li><a aria-label={t('nav.newsletter')} href={`/${lang}/newsletter/`}>{t('nav.newsletter')}</a></li>
           <li>
           {Object.entries(languages).filter(o => !o.includes(lang)).map(([lang, label]) => (
                 <a href={`/${lang}/`}>{label}</a>
@@ -71,19 +73,19 @@ const t = useTranslations(lang);
   <div class="drawer-side">
     <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
     <ul class="menu bg-base-200 min-h-full w-80 p-4">
-      <li><a href="https://dns.dtek.se/">{t('nav.dns')}</a></li>
-      <li><a href="https://cloud.timeedit.net/chalmers/web/public/">{t('nav.schedule')}</a></li>
-      <li><a href="https://cloud.timeedit.net/chalmers/web/b1/">{t('nav.rooms')}</a></li>
-      <li><a href="https://kortladdning3.chalmerskonferens.se/">{t('nav.card')}</a></li>
-      <li><a href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">{t('nav.map')}</a></li>
-      <li><a href="https://dtek.se/studiesocial-hjalp">{t('nav.study')}</a></li>
-      <li><a href="https://datateknologer.se/">{t('nav.companies')}</a></li>
-      <li><a href="https://dfoto.se/">{t('nav.photo')}</a></li>
-      <li><a href="https://dnollk.se/">{t('nav.reception')}</a></li>
-      <li><a href="https://wiki.dtek.se/">{t('nav.wiki')}</a></li>
-      <li><a href="https://dbus.dtek.se/">{t('nav.dbus')}</a></li>
-      <li><a href={`/${lang}/documents/`}>{t('nav.documents')}</a></li>
-      <li><a href={`/${lang}/newsletter/`}>{t('nav.newsletter')}</a></li>
+      <li><a aria-label={t('nav.dns')} href="https://dns.dtek.se/">{t('nav.dns')}</a></li>
+      <li><a aria-label={t('nav.schedule')} href="https://cloud.timeedit.net/chalmers/web/public/">{t('nav.schedule')}</a></li>
+      <li><a aria-label={t('nav.rooms')} href="https://cloud.timeedit.net/chalmers/web/b1/">{t('nav.rooms')}</a></li>
+      <li><a aria-label={t('nav.card')} href="https://kortladdning3.chalmerskonferens.se/">{t('nav.card')}</a></li>
+      <li><a aria-label={t('nav.map')} href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">{t('nav.map')}</a></li>
+      <li><a aria-label={t('nav.study')} href="https://dtek.se/studiesocial-hjalp">{t('nav.study')}</a></li>
+      <li><a aria-label={t('nav.companies')} href="https://datateknologer.se/">{t('nav.companies')}</a></li>
+      <li><a aria-label={t('nav.photo')} href="https://dfoto.se/">{t('nav.photo')}</a></li>
+      <li><a aria-label={t('nav.reception')} href="https://dnollk.se/">{t('nav.reception')}</a></li>
+      <li><a aria-label={t('nav.wiki')} href="https://wiki.dtek.se/">{t('nav.wiki')}</a></li>
+      <li><a aria-label={t('nav.dbus')} href="https://dbus.dtek.se/">{t('nav.dbus')}</a></li>
+      <li><a aria-label={t('nav.documents')} href={`/${lang}/documents/`}>{t('nav.documents')}</a></li>
+      <li><a aria-label={t('nav.newsletter')} href={`/${lang}/newsletter/`}>{t('nav.newsletter')}</a></li>
     </ul>
   </div>
 </div>
