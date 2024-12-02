@@ -1,4 +1,9 @@
 ---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 <div class="drawer drawer-end">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
@@ -7,9 +12,43 @@
       <div class="mx-2 flex-1 px-2">
         <img class="mx-2" src="/logo.svg" alt="Dtek Logo" />
         <div class="text-large flex flex-col">
-          <span>Datateknologsektionen</span>
-          <span>Chalmers Studentkår</span>
+          <span>{t('nav.name')}</span>
+          <span>{t('nav.union')}</span>
         </div>
+      </div>
+      <div class="hidden flex-none lg:block">
+        <ul class="menu menu-horizontal">
+          <li>
+            <details>
+              <summary>{t('nav.school')}</summary>
+              <ul class="bg-base-100 rounded-t-none p-2">
+                <li><a href="https://dns.dtek.se/">{t('nav.dns')}</a></li>
+                <li><a href="https://cloud.timeedit.net/chalmers/web/public/">{t('nav.schedule')}</a></li>
+                <li><a href="https://cloud.timeedit.net/chalmers/web/b1/">{t('nav.rooms')}</a></li>
+                <li><a href="https://kortladdning3.chalmerskonferens.se/">{t('nav.card')}</a></li>
+                <li><a href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">{t('nav.map')}</a></li>
+                <li><a href="https://dtek.se/studiesocial-hjalp">{t('nav.study')}</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="https://datateknologer.se/">{t('nav.companies')}</a></li>
+          <li><a href="https://dfoto.se/">{t('nav.photo')}</a></li>
+          <li><a href="https://dnollk.se/">{t('nav.reception')}</a></li>
+          <li><a href="https://wiki.dtek.se/">{t('nav.wiki')}</a></li>
+          <li><a href="https://dbus.dtek.se/">{t('nav.dbus')}</a></li>
+          <li><a href={`/${lang}/documents/`}>{t('nav.documents')}</a></li>
+          <li><a href={`/${lang}/newsletter/`}>{t('nav.newsletter')}</a></li>
+          <li>
+          {Object.entries(languages).filter(o => !o.includes(lang)).map(([lang, label]) => (
+                <a href={`/${lang}/`}>{label}</a>
+            ))}
+          </li>
+        </ul>
+      </div>
+      <div class="menu menu-horizontal lg:hidden">
+      {Object.entries(languages).filter(o => !o.includes(lang)).map(([lang, label]) => (
+            <a href={`/${lang}/`}>{label}</a>
+        ))}
       </div>
       <div class="flex-none lg:hidden">
         <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
@@ -26,49 +65,25 @@
           </svg>
         </label>
       </div>
-      <div class="hidden flex-none lg:block">
-        <ul class="menu menu-horizontal">
-          <li>
-            <details>
-              <summary>Skola</summary>
-              <ul class="bg-base-100 rounded-t-none p-2">
-                <li><a href="https://dns.dtek.se/">Studienämnd</a></li>
-                <li><a href="https://cloud.timeedit.net/chalmers/web/public/">Schema</a></li>
-                <li><a href="https://cloud.timeedit.net/chalmers/web/b1/">Grupprum</a></li>
-                <li><a href="https://kortladdning3.chalmerskonferens.se/">Kårkort</a></li>
-                <li><a href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">Karta</a></li>
-                <li><a href="https://dtek.se/studiesocial-hjalp">Studiesocial hjälp</a></li>
-              </ul>
-            </details>
-          </li>
-          <li><a href="https://datateknologer.se/">Företag</a></li>
-          <li><a href="https://dfoto.se/">Foton</a></li>
-          <li><a href="https://dnollk.se/">Mottagning</a></li>
-          <li><a href="https://wiki.dtek.se/">Wiki</a></li>
-          <li><a href="https://dbus.dtek.se/">DBus</a></li>
-          <li><a href="documents">Styrdokument</a></li>
-          <li><a href="newsletter">Veckobrev</a></li>
-        </ul>
-      </div>
     </div>
     <slot />
   </div>
   <div class="drawer-side">
     <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
     <ul class="menu bg-base-200 min-h-full w-80 p-4">
-      <li><a href="https://dns.dtek.se/">Studienämnd</a></li>
-      <li><a href="https://cloud.timeedit.net/chalmers/web/public/">Schema</a></li>
-      <li><a href="https://cloud.timeedit.net/chalmers/web/b1/">Grupprum</a></li>
-      <li><a href="https://kortladdning3.chalmerskonferens.se/">Kårkort</a></li>
-      <li><a href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">Karta</a></li>
-      <li><a href="https://dtek.se/studiesocial-hjalp">Studiesocial hjälp</a></li>
-      <li><a href="https://datateknologer.se/">Företag</a></li>
-      <li><a href="https://dfoto.se/">Foton</a></li>
-      <li><a href="https://dnollk.se/">Mottagning</a></li>
-      <li><a href="https://wiki.dtek.se/">Wiki</a></li>
-      <li><a href="https://dbus.dtek.se/">DBus</a></li>
-      <li><a href="documents">Styrdokument</a></li>
-      <li><a href="newsletter">Veckobrev</a></li>
+      <li><a href="https://dns.dtek.se/">{t('nav.dns')}</a></li>
+      <li><a href="https://cloud.timeedit.net/chalmers/web/public/">{t('nav.schedule')}</a></li>
+      <li><a href="https://cloud.timeedit.net/chalmers/web/b1/">{t('nav.rooms')}</a></li>
+      <li><a href="https://kortladdning3.chalmerskonferens.se/">{t('nav.card')}</a></li>
+      <li><a href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">{t('nav.map')}</a></li>
+      <li><a href="https://dtek.se/studiesocial-hjalp">{t('nav.study')}</a></li>
+      <li><a href="https://datateknologer.se/">{t('nav.companies')}</a></li>
+      <li><a href="https://dfoto.se/">{t('nav.photo')}</a></li>
+      <li><a href="https://dnollk.se/">{t('nav.reception')}</a></li>
+      <li><a href="https://wiki.dtek.se/">{t('nav.wiki')}</a></li>
+      <li><a href="https://dbus.dtek.se/">{t('nav.dbus')}</a></li>
+      <li><a href={`/${lang}/documents/`}>{t('nav.documents')}</a></li>
+      <li><a href={`/${lang}/newsletter/`}>{t('nav.newsletter')}</a></li>
     </ul>
   </div>
 </div>
