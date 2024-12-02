@@ -50,7 +50,23 @@ export const ui = {
     'fot.dsl': 'Wine Committee',
     'fot.createdby': 'Developed by',
     'fot.license': 'License',
-    'fot.photo': 'Most pictures belong to'
+    'fot.photo': 'Most pictures belong to',
+    // Welcome Card
+    'wel.welcome': 'Welcome',
+    'wel.p1': 'This is the DTEK portal, containing a bunch of useful links to places you might want to go. ',
+    'wel.p2.1': "The Student Division of Computer Science and Engineering, \"Data\" (officially \"Datateknologsektionen\" in Swedish), is a nonprofit organization for all students at the Computer Science and Engineering programmeand related",
+    'wel.p2.2': "master's programmes",
+    'wel.p2.3': "We arrange receptions for newlyadmitted students at both the",
+    'wel.p2.4': "bachelor's",
+    'wel.p2.and': "and",
+    'wel.p2.5': "master's",
+    'wel.p2.6': "programmes, arrange",
+    'wel.p2.7': "parties",
+    'wel.p2.8': ", ",
+    'wel.p2.9': "monitor your education",
+    'wel.p2.10': "much more.",
+    'wel.p3.1': "Part of",
+    'wel.p3.2': "Chalmers Student Union",
   },
   sv: {
     'nav.name': 'Datateknologsektionen',
@@ -97,5 +113,6 @@ export const ui = {
     'fot.createdby': 'Utvecklad av',
     'fot.license': 'License',
     'fot.photo': 'De flesta foton tillhör'
+    // Welcome Card
   },
 } as const;
