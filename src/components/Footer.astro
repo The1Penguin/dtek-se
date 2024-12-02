@@ -1,0 +1,88 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<footer class="footer bg-base-200 p-10">
+  <nav class="menu menu-vertical grid grid-cols-2 gap-4 place-items-stretch">
+      <span class="font-bold text-right">{t('fot.contact')}</span>
+      <a class="link link-hover" href="mailto:styret@dtek.se">styret@dtek.se</a>
+      <span class="font-bold text-right">{t('fot.email')}</span>
+      <span>
+        Datateknologsektionen Chalmers Studentkår
+        <br>
+        Rännvägen 8
+        <br>
+        412 58 Göteborg
+      </span>
+      <span class="font-bold text-right">{t('fot.orgn')}</span>
+      <span>857209-7080</span>
+  </nav>
+  <nav class="menu menu-vertical grid grid-cols-2 gap-4 place-items-stretch">
+    <span class="font-bold text-right">{t('fot.board')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/Styret">D-Styret</a>
+    <span class="font-bold text-right">{t('fot.dns')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/DNS">DNS</a>
+    <span class="font-bold text-right">{t('fot.d6')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/D6">D6</a>
+    <span class="font-bold text-right">{t('fot.delta')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/Delta">Delta</a>
+    <span class="font-bold text-right">{t('fot.drust')}</span>
+    <a class="link link-hover" href="//drust.se">DRUST</a>
+    <span class="font-bold text-right">{t('fot.dnollk')}</span>
+    <a class="link link-hover" href="//dnollk.se">DNollK</a>
+    <span class="font-bold text-right">{t('fot.dag')}</span>
+    <a class="link link-hover" href="//datateknologer.se">DAG</a>
+    <span class="font-bold text-right">{t('fot.dhack')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/DHack">dHack</a>
+    <span class="font-bold text-right">{t('fot.flag')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/ståthållarämbetet">Ståthållarämbetet</a>
+    <span class="font-bold text-right">{t('fot.idrott')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/IDrott">iDrott</a>
+  </nav>
+  <nav class="menu menu-vertical grid grid-cols-2 gap-4 place-items-stretch">
+    <span class="font-bold text-right">{t('fot.dlude')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/DLude">DLude</a>
+    <span class="font-bold text-right">{t('fot.dfoto')}</span>
+    <a class="link link-hover" href="//dfoto.se">D-Foto</a>
+    <span class="font-bold text-right">{t('fot.dbus')}</span>
+    <a class="link link-hover" href="https://dbus.dtek.se">DBus</a>
+    <span class="font-bold text-right">{t('fot.dlirium')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/DLirium">D-lirium</a>
+    <span class="font-bold text-right">{t('fot.dbrus')}</span>
+    <a class="link link-hover" href="https://dbrus.dtek.se">DBrus</a>
+    <span class="font-bold text-right">{t('fot.dmnollk')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/DMNollK">DMNollK</a>
+    <span class="font-bold text-right">{t('fot.dkock')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/DKock">DKock</a>
+    <span class="font-bold text-right">{t('fot.equality')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/J%C3%A4mst%C3%A4llD">JämställD</a>
+    <span class="font-bold text-right">{t('fot.dateit')}</span>
+    <a class="link link-hover" href="https://date-it.se">DatE-IT</a>
+    <span class="font-bold text-right">{t('fot.bakad')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/BakaD">BakaD</a>
+    <span class="font-bold text-right">{t('fot.dsl')}</span>
+    <a class="link link-hover" href="https://wiki.dtek.se/wiki/DSL">DSL</a>
+  </nav>
+</footer>
+<footer class="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
+  <aside class="flex justify-center">
+    <p>
+      {t('fot.createdby')}
+      <a class="link link-hover" href="https://github.com/The1Penguin/">
+        pingu
+      </a>
+    </p>
+    <span>|</span>
+    <a class="link link-hover" href="/license"> {t('fot.license')} </a>
+    <span>|</span>
+    <p>
+      {t('fot.photo')}
+      <a class="link link-hover" href="https://dfoto.se/">
+        DFoto
+      </a>
+    </p>
+  </aside>
+</footer>
