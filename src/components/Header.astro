@@ -1,0 +1,74 @@
+---
+---
+<div class="drawer drawer-end">
+  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col">
+    <div class="navbar bg-base-300 w-full">
+      <div class="mx-2 flex-1 px-2">
+        <img class="mx-2" src="/logo.svg" alt="Dtek Logo" />
+        <div class="text-large flex flex-col">
+          <span>Datateknologsektionen</span>
+          <span>Chalmers Studentkår</span>
+        </div>
+      </div>
+      <div class="flex-none lg:hidden">
+        <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="inline-block h-6 w-6 stroke-current">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </label>
+      </div>
+      <div class="hidden flex-none lg:block">
+        <ul class="menu menu-horizontal">
+          <li>
+            <details>
+              <summary>Skola</summary>
+              <ul class="bg-base-100 rounded-t-none p-2">
+                <li><a href="https://dns.dtek.se/">Studienämnd</a></li>
+                <li><a href="https://cloud.timeedit.net/chalmers/web/public/">Schema</a></li>
+                <li><a href="https://cloud.timeedit.net/chalmers/web/b1/">Grupprum</a></li>
+                <li><a href="https://kortladdning3.chalmerskonferens.se/">Kårkort</a></li>
+                <li><a href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">Karta</a></li>
+                <li><a href="https://dtek.se/studiesocial-hjalp">Studiesocial hjälp</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="https://datateknologer.se/">Företag</a></li>
+          <li><a href="https://dfoto.se/">Foton</a></li>
+          <li><a href="https://dnollk.se/">Mottagning</a></li>
+          <li><a href="https://wiki.dtek.se/">Wiki</a></li>
+          <li><a href="https://dbus.dtek.se/">DBus</a></li>
+          <li><a href="documents">Styrdokument</a></li>
+          <li><a href="newsletter">Veckobrev</a></li>
+        </ul>
+      </div>
+    </div>
+    <slot />
+  </div>
+  <div class="drawer-side">
+    <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+    <ul class="menu bg-base-200 min-h-full w-80 p-4">
+      <li><a href="https://dns.dtek.se/">Studienämnd</a></li>
+      <li><a href="https://cloud.timeedit.net/chalmers/web/public/">Schema</a></li>
+      <li><a href="https://cloud.timeedit.net/chalmers/web/b1/">Grupprum</a></li>
+      <li><a href="https://kortladdning3.chalmerskonferens.se/">Kårkort</a></li>
+      <li><a href="https://maps.chalmers.se/#6967eb7c-ff54-4dd7-af00-9e19fcaba128">Karta</a></li>
+      <li><a href="https://dtek.se/studiesocial-hjalp">Studiesocial hjälp</a></li>
+      <li><a href="https://datateknologer.se/">Företag</a></li>
+      <li><a href="https://dfoto.se/">Foton</a></li>
+      <li><a href="https://dnollk.se/">Mottagning</a></li>
+      <li><a href="https://wiki.dtek.se/">Wiki</a></li>
+      <li><a href="https://dbus.dtek.se/">DBus</a></li>
+      <li><a href="documents">Styrdokument</a></li>
+      <li><a href="newsletter">Veckobrev</a></li>
+    </ul>
+  </div>
+</div>
