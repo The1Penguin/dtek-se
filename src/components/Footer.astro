@@ -5,7 +5,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<footer class="footer bg-base-200 p-10">
+<footer class="footer bg-base-200 p-10 mt-6">
   <nav class="menu menu-vertical grid grid-cols-2 gap-4 place-items-stretch">
       <span class="font-bold text-right">{t('fot.contact')}</span>
       <a class="link link-hover" href="mailto:styret@dtek.se">styret@dtek.se</a>
