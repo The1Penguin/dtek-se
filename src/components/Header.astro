@@ -1,4 +1,10 @@
 ---
+interface Props {
+  page: string;
+}
+
+const { page } = Astro.props;
+
 import { Image } from 'astro:assets';
 import { languages } from '../i18n/ui';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
@@ -43,14 +49,14 @@ const t = useTranslations(lang);
           <li><a aria-label={t('nav.newsletter')} href={`/${lang}/newsletter/`}>{t('nav.newsletter')}</a></li>
           <li>
           {Object.entries(languages).filter(o => !o.includes(lang)).map(([lang, label]) => (
-                <a href={`/${lang}/`}>{label}</a>
+                <a href={`/${lang}/`+page}>{label}</a>
             ))}
           </li>
         </ul>
       </div>
       <div class="menu menu-horizontal lg:hidden">
       {Object.entries(languages).filter(o => !o.includes(lang)).map(([lang, label]) => (
-            <a href={`/${lang}/`}>{label}</a>
+            <a href={`/${lang}/`+page}>{label}</a>
         ))}
       </div>
       <div class="flex-none lg:hidden">
