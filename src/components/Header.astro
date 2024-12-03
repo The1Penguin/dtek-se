@@ -14,13 +14,13 @@ const t = useTranslations(lang);
     <div class="navbar bg-base-300 w-full mb-6">
       <div class="mx-2 flex-1 px-2">
         <Image class="mx-2" src={logo} loading="eagerly" alt="Dtek Logo" />
-        <div class="text-large flex flex-col">
+        <a class="text-large flex flex-col btn" href={`/${lang}/`}>
           <span>{t('nav.name')}</span>
           <span>{t('nav.union')}</span>
-        </div>
+        </a>
       </div>
       <div class="hidden flex-none lg:block">
-        <ul class="menu menu-horizontal">
+        <ul class="menu menu-horizontal px-4">
           <li>
             <details>
               <summary>{t('nav.school')}</summary>
