@@ -6,8 +6,8 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="card lg:card-side bg-base-100 shadow-xl text-base-content  px-12">
-  <div class="card-body grid grid-rows-1 gap-8">
+<div class="card lg:card-side bg-base-100 shadow-xl">
+  <div class="card-body grid grid-rows-1">
     <h1 class="card-title text-3xl">{t('wel.welcome')}</h1>
     <span>{t('wel.p1')}</span>
     <span>
