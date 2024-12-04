@@ -1,0 +1,109 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<form action="https://dtek.us19.list-manage.com/subscribe/post?u=1f6294050ac174624b0c334e7&amp;id=dee84e9453" method="post" class="mx-8">
+  <div>
+    <h2>{t('new.sub')}</h2>
+    <div>
+        <span class="asterisk">*</span>
+        {t('new.ind')}
+    </div>
+    <div>
+        <label for="mce-EMAIL">
+            {t('new.mail')}
+            <span class="asterisk">*</span>
+        </label>
+        <input value="" name="EMAIL" class="required email" type="email">
+    </div>
+    <div>
+      <label for="mce-PREF_LANG">{t('new.lang')}</label>
+      <select name="PREF_LANG">
+        <option value="English">{t('new.eng')}</option>
+        <option value="Swedish" selected>{t('new.swe')}</option>
+      </select>
+    </div>
+    <div>
+        <label for="mce-GRADUATION">
+            {t('new.eyg')}
+        </label>
+        <select name="GRADUATION" class="" id="mce-GRADUATION">
+            <option value=""></option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            <option value="2031">2031</option>
+            <option value="2032">2032</option>
+        </select>
+    </div>
+    <div>
+      <strong>
+        {t('new.mailf')}
+      </strong>
+      <br>
+      <input value="html" name="EMAILTYPE" type="radio" checked>
+      <label for="mce-EMAILTYPE-0">
+        {t('new.html')}
+      </label>
+      <br/>
+      <input value="text" name="EMAILTYPE" type="radio">
+      <label for="mce-EMAILTYPE-1">
+        {t('new.text')}
+      </label>
+    </div>
+    <div>
+      <div>
+        <label>
+          {t('new.perm')}
+          <span class="asterisk">*</span>
+        </label>
+        <p>{t('new.recv')}</p>
+        <fieldset>
+          <label for="gdpr_6003">
+            <input name="gdpr[6003]" value="Y" class="av-checkbox gdpr" type="checkbox">
+            <span>{t('new.new')}</span>
+          </label>
+          <label for="gdpr_6011">
+            <input id="gdpr_6011" name="gdpr[6011]" value="Y" class="av-checkbox gdpr" type="checkbox">
+            <span>{t('new.almn')}</span>
+          </label>
+        </fieldset>
+        <p>
+          {t('new.p1')}
+          <br>
+          {t('new.p2')}
+          <br>
+          {t('new.p3')}
+          <br>
+          {t('new.p4')}
+        </p>
+        <p>
+          {t('new.p5')}
+        </p>
+      </div>
+      <div>
+        <p>
+          {t('new.p6')}
+          <a href="https://mailchimp.com/legal/" target="_blank">{t('new.p6.l')}</a>.</p>
+      </div>
+    </div>
+    <div>
+    <div class="response" id="mce-error-response" style="display:none"></div>
+    <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input name="b_1f6294050ac174624b0c334e7_dee84e9453" tabindex="-1" value="" type="text">
+    </div>
+    <br>
+    <div>
+      <input value={t('new.subscribe')} name="subscribe" id="mc-embedded-subscribe" class="button" type="submit">
+    </div>
+  </div>
+</form>
